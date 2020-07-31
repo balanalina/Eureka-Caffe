@@ -22,6 +22,7 @@
     height: 110px;
     padding-bottom: 10px;
     display: flex;
+
   }
 
   ul {
@@ -29,6 +30,7 @@
     width: 50%;
     align-items: flex-start;
     z-index: inherit;
+    margin-left: 8%;
   }
 
   li {
@@ -42,12 +44,14 @@
     width: 50%;
     justify-content: center;
     margin-top: 10px;
+    text-align: center;
 
     p {
       display: inline-block;
       font-family: $font;
       font-size: $fontSize;
       color: black;
+      font-weight: bold;
     }
 
     #my-slider {
@@ -61,7 +65,8 @@
 
     .price {
       color: grey;
-      margin: 5px;
+      margin: 7px;
+      font-weight: bold;
     }
   }
 }

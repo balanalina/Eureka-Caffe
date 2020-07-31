@@ -1,6 +1,10 @@
 <%= javascript_include_tag('home_page') %>
 <%= javascript_include_tag('nouislider') %>
+<%provide(:title,"Home") %>
 <%= render 'layouts/menu_bar' %>
+<head>
+  <title><%= yield(:title) %></title>
+</head>
 <div class="menu">
  <%=  render 'layouts/static_dishes' %>
 </div>

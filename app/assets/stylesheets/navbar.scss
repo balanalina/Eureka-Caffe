@@ -1,14 +1,19 @@
 @import "variables";
 
+body{
+  margin: 0;
+}
+
 .top-container {
-  background: url(caffee2.jpg) no-repeat center fixed;
+  margin: 0;
+  background: url(caffe2.jpg) no-repeat center fixed;
   height: 550px;
   background-size: cover;
   width: 100%;
   z-index: 1;
   text-align: center;
 
-  .caffee-logo {
+  .caffe-logo {
     display: inline-block;
     padding-top: 2.7%;
   }
@@ -23,6 +28,7 @@
       font-family: $font;
       font-size: $fontSize;
       color: white;
+      font-weight: bold;
     }
 
     .logo-text {
@@ -31,6 +37,7 @@
       color: white;
       padding-left: 10px;
       margin: 0;
+      float: left;
     }
 
     img {
