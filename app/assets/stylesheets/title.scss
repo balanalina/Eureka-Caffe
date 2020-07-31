@@ -1,0 +1,45 @@
+@import 'variables';
+
+.fork-knife {
+  vertical-align: middle;
+  width: 100%;
+
+  p {
+    width: 100px;
+    color: transparent;
+    display: inline-block;
+    text-decoration-line: overline;
+    text-decoration-style: wavy;
+    text-decoration-color: orange;
+    padding-right: 200px;
+    padding-left: 10px;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+  img {
+    display: inline-block;
+    margin-top: 6px;
+    height: 25px;
+  }
+
+}
+
+.description-text {
+  font-family: $font;
+  font-size: $fontSize + 5;
+  color: orange;
+  margin-top: 0;
+
+  &:hover {
+    font-size: $fontSize + 20;
+  }
+}
+
+h1 {
+  font-family: $font;
+  font-size: 80px;
+  color: orange;
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
