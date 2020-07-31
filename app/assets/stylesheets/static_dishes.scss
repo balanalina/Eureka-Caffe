@@ -1,14 +1,15 @@
 @import "variables";
 
 .menu {
+  display: flex;
+  flex-direction: column;
   margin-top: 60px;
   outline-color: transparent;
 }
 
 .items {
   display: flex;
-  margin-left: 13%;
-  margin-right: 13%;
+  align-self: center;
 
   .item {
     border-color: #e6e6e6;
