@@ -1,2 +1,0 @@
-class CaffeesController < ApplicationController
-end
