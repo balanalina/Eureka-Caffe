@@ -12,7 +12,7 @@
   align-self: center;
 
   .item {
-    border-color: #e6e6e6;
+    border-color: $grey-outline-color;
     border-style: solid;
     border-width: 0.5px;
     align-items: flex-start;
@@ -48,12 +48,12 @@
 
     .price {
       color: orange;
-      font-size: $fontSize;
+      font-size: $font-size;
     }
 
     .category {
       color: grey;
-      font-size: $fontSize;
+      font-size: $font-size;
     }
 
   }

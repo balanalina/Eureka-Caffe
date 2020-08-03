@@ -27,12 +27,12 @@
 
 .description-text {
   font-family: $font;
-  font-size: $fontSize + 5;
+  font-size: $font-size + 5;
   color: orange;
   margin-top: 0;
 
   &:hover {
-    font-size: $fontSize + 20;
+    font-size: $font-size + 20;
   }
 }
 
