@@ -27,8 +27,9 @@ body{
     p {
       font-family: $font;
       font-size: $font-size;
-      color: white;
       font-weight: bold;
+      color: white;
+
     }
 
     .logo-text {
@@ -62,8 +63,13 @@ body{
     padding-right: 20px;
     padding-left: 20px;
 
-    &:hover {
-      color: orange;
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        color: orange;
+      }
     }
   }
 }
