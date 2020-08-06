@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 #  get '/service', to: '#'
 #  get '/blog', to: '#'
 #  get '/contacts', to: '#'
+  # get '/signup', to: '#'
+  # get '/login', to: '#'
 end
