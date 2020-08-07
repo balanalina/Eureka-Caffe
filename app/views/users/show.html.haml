@@ -1,0 +1,10 @@
+-provide(:title,@user.name)
+
+%div.row
+  %div.col-md-4
+    %section.user-info
+      = gravatar_for @user
+      %h1
+        =@user.name
+      %p.user-email
+        =@user.email

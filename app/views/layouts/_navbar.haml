@@ -5,10 +5,6 @@
     %P.logo-text CAFFE
   %div.right-side-info
     %b
-      %p=link_to "SIGNUP", '#'
-      %span.dot
-      %p=link_to "LOGIN", '#'
-      %span.dot
       %p=link_to "HOME", '/home'
       %span.dot
       %p=link_to "ABOUT", '#'
@@ -18,3 +14,12 @@
       %p=link_to "BLOG", '#'
       %span.dot
       %p=link_to "CONTACTS", '#'
+      %span.dot
+      - if logged_in?
+        %p=link_to "PROFILE", @current_user
+        %span.dot
+        %p=link_to "LOG OUT", logout_path, method: :delete
+      - else
+        %p=link_to "SIGN UP", signup_path
+        %span.dot
+        %p=link_to "LOG IN", login_path

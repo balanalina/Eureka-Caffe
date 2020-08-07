@@ -11,12 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  */
+@import 'bootstrap';
 @import 'variables';
+@import "sessions";
+@import "users";
 @import 'navbar';
 @import 'menu_bar';
 @import 'title';
 @import 'static_dishes';
 @import 'nouislider';
-@import 'bootstrap';
+
 
 
