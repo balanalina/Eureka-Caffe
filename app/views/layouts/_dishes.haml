@@ -1,0 +1,21 @@
+- if products_empty?
+  - populate_db
+-@count=0
+-Product.all.each do |dish|
+  - if @count%4 == 0
+    %div.items
+      %div.item
+        %div.picture
+          = image_tag(dish.image,alt: dish.title)
+        %b
+        %p.title=dish.title
+        %p.category=dish.category
+        %p.price='$'+dish.price.to_s
+  %div.item
+    %div.picture
+      = image_tag(dish.image,alt: dish.title)
+    %b
+    %p.title=dish.title
+    %p.category=dish.category
+    %p.price='$#{dish.price}'
+  -@count+=1
