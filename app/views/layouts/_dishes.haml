@@ -5,7 +5,7 @@
     - dishes.each do |dish|
       .item
         .picture
-          = image_tag(dish.image,alt: dish.title)
+          = image_tag(url_for(dish.image))
         %b
           %p.title= dish.title
           %p.category= dish.category

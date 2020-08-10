@@ -1,0 +1,18 @@
+development:
+  cloud_name: dwdawkjo5
+  api_key: '782592532334189'
+  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dwdawkjo5
+  api_key: '782592532334189'
+  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dwdawkjo5
+  api_key: '782592532334189'
+  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
+  enhance_image_tag: true
+  static_file_support: false
