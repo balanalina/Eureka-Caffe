@@ -10,7 +10,8 @@
   align-self: center;
 
   .item {
-    border-color: $grey-outline-color;
+    //border-color: $grey-outline-color;
+    border-color: transparent;
     border-style: solid;
     border-width: 0.5px;
     align-items: flex-start;

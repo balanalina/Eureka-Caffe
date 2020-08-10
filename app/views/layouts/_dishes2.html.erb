@@ -1,0 +1,25 @@
+<%  if products_empty? %>
+  <%  populate_db %>
+<% end %>
+<% @count=1 %>
+<% Product.all.in_groups_of(4).each do |dish| %>
+  <% if @count%4 == 1 %>
+    <div class="items">
+  <% end %>
+  <div class="item">
+    <div class="picture">
+      <%= image_tag(dish.image,alt: dish.title)%>
+    </div>
+    <b>
+      <p class="title"><%=dish.title%></p>
+      <p class="category"><%=dish.category%></p>
+      <p class="price"><%='$'+dish.price.to_s%></p>
+    </b>
+  </div>
+  <% if @count%4 == 0 %>
+    </div>
+  <% end %>
+ <%@count+=1%>
+<%end %>
+<br>
+<br>
