@@ -19,9 +19,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'cloudinary', '~> 1.16', '>= 1.16.1'
+gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -38,11 +38,12 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '3.2.1'
+  gem 'pg', '1.2.3'
   gem 'spring', '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'web-console', '>= 3.3.0'
-  gem 'pg', '1.2.3'
 end
+
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -54,6 +55,7 @@ group :test do
   gem 'minitest', '5.11.3'
   gem 'minitest-reporters', '1.3.8'
   gem 'rails-controller-testing', '1.0.4'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'webdrivers'
   gem 'win32console', '~> 1.3', '>= 1.3.2'
 end
