@@ -18,7 +18,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  context  'unsuccessful sign up' do
+  context 'unsuccessful sign up' do
     it 'should render the form again' do
       @user[:name] = 'g'
       post users_url, params: { user: @user }
