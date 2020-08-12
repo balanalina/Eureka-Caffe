@@ -1,18 +1,12 @@
 development:
-  cloud_name: dwdawkjo5
-  api_key: '782592532334189'
-  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
-  enhance_image_tag: true
-  static_file_support: false
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
 production:
-  cloud_name: dwdawkjo5
-  api_key: '782592532334189'
-  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
-  enhance_image_tag: true
-  static_file_support: true
-test:
-  cloud_name: dwdawkjo5
-  api_key: '782592532334189'
-  api_secret: sINOpLykIKuHDY2b0bpkOO-tSuM
+  cloud_name: <%= ENV["CLOUD_NAME"] %>
+  api_key: <%= ENV["API_KEY"] %>
+  api_secret: <%= ENV["API_SECRET"]%>
   enhance_image_tag: true
   static_file_support: false
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>

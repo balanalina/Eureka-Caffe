@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  def create
+  def new; end
+
+  def login
     user = User.find_by(email: params[:session][:email].downcase)
     if user &.authenticate(params[:session][:password])
       reset_session
@@ -11,10 +13,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def new
-  end
 
-  def destroy
+  def logout
     log_out
     redirect_to root_url
   end

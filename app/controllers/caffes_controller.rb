@@ -1,4 +1,2 @@
 class CaffesController < ApplicationController
-
-
 end
