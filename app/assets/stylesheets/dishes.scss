@@ -17,9 +17,21 @@
     align-items: flex-start;
     background-color: white;
     transition: all .2s ease-in-out;
+    margin-bottom: 30px;
+
+    .cart-button{
+      display: none;
+      color: orange;
+    }
 
     &:hover {
       transform: scale(1.08);
+
+      .cart-button{
+        display: block;
+        align-self: center;
+        margin: auto;
+      }
     }
 
     .picture {

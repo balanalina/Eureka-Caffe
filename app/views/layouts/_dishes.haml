@@ -7,4 +7,6 @@
         %b
           %p.title= dish.title
           %p.category= dish.category
-          %p.price= '$'+dish.price.round.to_s
+          %p.price= number_to_currency(dish.price)
+          - if logged_in?
+            =button_to 'Add to cart', '#',class: 'button cart-button is-warning add-to-cart'
