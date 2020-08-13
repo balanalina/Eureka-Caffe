@@ -14,5 +14,10 @@ Rails.application.routes.draw do
     post :login, on: :collection
     delete :logout, on: :member
   end
+  resources :carts do
+    get :show, on: :member
+  end
+  resources :cart_items
+  resources :products
 
 end

@@ -1,0 +1,11 @@
+.keep-shopping.pv1.mt4.has-text-rght
+  =link_to 'Keep Shopping', root_path, class:  'button is-warning'
+%hr
+  %section.section
+    =render(@cart.cart_items)
+    .column
+      =button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure?"}, class: "button is-danger"
+      .column.total.has_text_right
+        %h4.title.is_4
+          %span.f5 Total:
+          =number_to_currency(@cart.total_price)
