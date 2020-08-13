@@ -10,3 +10,6 @@
           %p.price= number_to_currency(dish.price)
           - if logged_in?
             =button_to 'Add to cart', '#',class: 'button cart-button is-warning add-to-cart'
+          - else
+            =button_to 'Add to cart', new_user_url , method: :get ,class: 'button cart-button is-warning add-to-cart'
+
