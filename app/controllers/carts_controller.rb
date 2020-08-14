@@ -22,9 +22,8 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
-    session[:cart_id] = nil
-
+    CartItem.joins(:cart).where(carts: { id: @cart.id }).delete_all if @cart.id == session[:cart_id]
+    redirect_to(@cart)
   end
 
   private

@@ -20,14 +20,20 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.add_product(product)
     respond_to do |format|
       if @cart_item.save
-        format.html { redirect_to home_path, notice: 'Item added to cart.' }
-        end
+        format.html { redirect_to root_path, notice: 'Item successfully added to the cart!' }
+      else
+        format.html { redirect_to root_path, notice: 'Could not add the item to cart!' }
+      end
     end
   end
 
   def destroy
     @cart = Cart.find(session[:cart_id])
-    @cart_item.destroy
+    if @cart_item.quantity > 1
+      @cart_item.decrement(:quantity).save!
+    else
+      @cart_item.destroy
+    end
     respond_to do |format|
       format.html { redirect_to cart_path(@cart), notice: 'Item successfully removed.' }
     end
