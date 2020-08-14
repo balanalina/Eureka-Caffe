@@ -1,7 +1,5 @@
 .columns.align-items-center
   .column.is-1
-    =cart_item.quantity
-  .column.is-2
     .picture
       =image_tag(url_for(cart_item.product.image))
   .column.is-9
@@ -9,6 +7,8 @@
     .columns.align-items-center
       .column.is-3.has-text-right
         %strong.f4=number_to_currency(cart_item.total_price)
-.has-text-right
-  = link_to 'Remove Item',cart_item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4"
-%hr/
+    .column.is-2
+    %strong="Quantity: #{cart_item.quantity}"
+  .has-text-right.remove-item-link
+    = link_to 'Remove Item',cart_item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4"
+%hr

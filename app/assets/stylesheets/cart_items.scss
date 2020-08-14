@@ -13,7 +13,25 @@
     padding-right: 50px;
     padding-left: 20px;
     padding-top: 3px;
-    justify-content: space-evenly;
   }
+}
+a{
+  color: orange;
+}
+
+.columns{
+  align-self: center;
+}
+
+.remove-item-link{
+  margin-left: 110px;
+  margin-bottom: 20px;
+  font-color: orange;
+  align-self: center;
+}
+
+hr{
+  border-top: 2px solid $grey-outline-color;
+  width: 100%;
 }
 
