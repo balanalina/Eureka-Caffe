@@ -3,7 +3,7 @@
 .keep-shopping.pv1.mt4.has-text-right
   =link_to 'Keep Shopping', root_path, class:  'button is-warning keep-shopping-button'
 %hr
-  %section.section
+  %section.section.section-cart
     =render(@cart.cart_items)
     .column
       =button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure?"}, class: "button is-danger empty-cart"
