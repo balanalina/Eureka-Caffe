@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       reset_session
       log_in @user
       flash[:success] = "Account created!"
+      Cart.create(user_id: @user.id)
       redirect_to @user
     else
       render 'new'

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_secure_password
+  has_one :cart
   before_save { email.downcase! }
   validates :name, presence: true, length: { minimum: 6 }
   validates :password_digest, presence: true, length: { minimum: 6 }

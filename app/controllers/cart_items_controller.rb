@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-  include CurrentCart
+  include CartsHelper
   before_action :set_cart_item, only: %i[show edit update destroy]
   before_action :set_current_cart, only: :create
 
@@ -28,7 +28,7 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(session[:cart_id])
+    @cart = current_user.cart
     if @cart_item.quantity > 1
       @cart_item.decrement(:quantity).save!
     else
@@ -39,14 +39,10 @@ class CartItemsController < ApplicationController
     end
   end
 
-  def update
-    # code here
-  end
-
   private
 
   def set_cart_item
-    @cart_item = CartItem.find(params[:id])
+    @cart_item = current_user.cart.cart_items.find(params[:id])
   end
 
   def cart_item_params

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
-  include CurrentCart
+  include CartsHelper
   before_action :set_current_cart
 end
