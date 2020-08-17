@@ -8,3 +8,5 @@
         =@user.name
       %p.user-email
         =@user.email
+    = button_to 'Settings', edit_user_path(@user), method: :put, class: 'btn btn-primary bttn-settings'
+

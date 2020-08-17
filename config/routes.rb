@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 #  get '/contacts', to: '#'
   resources :users do
     get :signup, on: :collection
+    put :edit, on: :member
   end
   resources :sessions do
     get :login
