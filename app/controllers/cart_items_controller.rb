@@ -10,12 +10,12 @@ class CartItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @cart_item = @cart.add_product(product)
-    respond_to do |format|
-      if @cart_item.save
-        format.html { redirect_to root_path, notice: 'Item successfully added to the cart!' }
-      else
-        format.html { redirect_to root_path, notice: 'Could not add the item to cart!' }
-      end
+    if @cart_item.save
+      redirect_to root_path
+      flash[:success] = 'Item successfully added to the cart!'
+    else
+      redirect_to root_path
+      flash[:fail] = 'Could not add the item to cart!'
     end
   end
 

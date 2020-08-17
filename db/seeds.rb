@@ -5,29 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#
+path = Array.wrap(%w[app assets images])
+products_array = [{ title: 'Eggs', category: 'Breakfast', price: 12, image: 'f1.png' }, 
+                  { title: 'Sweets', category: 'Breakfast', price: 17, image: 'f2.png' },
+                  { title: 'Gourmet Breakfast', category: 'Breakfast', price: 20, image: 'f3.png' },
+                  { title: 'Risotto', category: 'Second Courses', price: 45, image: 'f4.png' },
+                  { title: 'Fancy Meat', category: 'Second Courses', price: 70, image: 'f5.png' },
+                  { title: 'Sea Weed Rice', category: 'Entrees', price: 37, image: 'f6.png' },
+                  { title: 'Spaghetti', category: 'Second Courses', price: 40, image: 'f7.png' },
+                  { title: 'Spotted Burger', category: 'Burgers', price: 70, image: 'f8.png' }]
 
-new_product = Product.create_or_find_by!(title: 'Eggs', category: 'Breakfast', price: 12)
-file_path = Rails.root.join('app', 'assets', 'images', 'f1.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f1.png')
-new_product = Product.create_or_find_by!(title: 'Sweets', category: 'Breakfast', price: 17)
-file_path = Rails.root.join('app', 'assets', 'images', 'f2.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f2.png')
-new_product = Product.create_or_find_by!(title: 'Gourmet Breakfast', category: 'Breakfast', price: 20)
-file_path = Rails.root.join('app', 'assets', 'images', 'f3.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f3.png')
-new_product = Product.create_or_find_by!(title: 'Risotto', category: 'Second Courses', price: 45)
-file_path = Rails.root.join('app', 'assets', 'images', 'f4.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f4.png')
-new_product = Product.create_or_find_by!(title: 'Fancy Meat', category: 'Second Courses', price: 70)
-file_path = Rails.root.join('app', 'assets', 'images', 'f5.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f5.png')
-new_product = Product.create_or_find_by!(title: 'Sea Weed Rice', category: 'Entrees', price: 37)
-file_path = Rails.root.join('app', 'assets', 'images', 'f6.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f6.png')
-new_product = Product.create_or_find_by!(title: 'Spaghetti', category: 'Second Courses', price: 40)
-file_path = Rails.root.join('app', 'assets', 'images', 'f7.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f7.png')
-new_product = Product.create_or_find_by!(title: 'Spotted Burger', category: 'Burgers', price: 70)
-file_path = Rails.root.join('app', 'assets', 'images', 'f8.png')
-new_product.image.attach(io: File.open(file_path), filename: 'f8.png')
+products_array.each do |hash|
+  title = hash[:title]
+  category = hash[:category]
+  price = hash[:price]
+  image = hash[:image]
+  file_path = Rails.root.join(path.first, path.second, path.third, image)
+  new_product = Product.create_or_find_by!(title: title, category: category, price: price)
+  new_product.image.attach(io: File.open(file_path), filename: image)
+end
+
+
