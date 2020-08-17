@@ -2,19 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.signup-title{
+.signup-title {
   text-align: center;
 }
 
-.signup-form{
+.signup-form {
   color: orange;
   margin: 10px;
 
-  label{
+  label {
     margin: 5px;
   }
 
-  .signup-btn{
+  .signup-btn {
     margin: 0;
     position: absolute;
     left: 42%;
@@ -22,27 +22,27 @@
     color: white;
     background-color: orange;
 
-    &:hover{
+    &:hover {
       background-color: darkorange;
     }
   }
 }
 
-.gravatar{
+.gravatar {
   border-radius: 50%;
   margin-left: 100px;
   float: left;
 }
 
-.user-info{
+.user-info {
   margin: 20px;
   text-align: end;
 
-  .h{
+  .h {
     text-align: end;
   }
 
-  .user-email{
+  .user-email {
     text-align: end;
   }
 }

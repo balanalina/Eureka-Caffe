@@ -1,25 +1,25 @@
 // Place all the styles related to the Cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-div{
+div {
   align-content: center;
 
-  .keep-shopping-button{
+  .keep-shopping-button {
     align-self: center;
     font-size: 40px;
     margin-left: 20px;
   }
 
-  a{
+  a {
     font-size: 15px;
   }
 }
 
-.section-cart{
+.section-cart {
   display: flex;
   flex-direction: column;
 
-  hr{
+  hr {
     border-top: 2px solid $grey-outline-color;
   }
 }

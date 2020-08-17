@@ -7,12 +7,10 @@ class CartsController < ApplicationController
   def destroy
     @cart.cart_items.delete_all
     redirect_to(@cart)
+    flash[:success] = "Your cart is empty!"
   end
 
-  def edit; end
-
   private
-
 
   def set_cart
     @cart = current_user.cart

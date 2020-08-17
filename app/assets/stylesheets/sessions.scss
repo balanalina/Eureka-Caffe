@@ -2,18 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.login-title{
+.login-title {
   text-align: center;
 }
-.login-form{
+.login-form {
   color: orange;
   margin: 10px;
 
-  label{
+  label {
     margin: 5px;
   }
 
-  .login-btn{
+  .login-btn {
     margin: 0;
     position: absolute;
     left: 42%;
@@ -21,7 +21,7 @@
     color: white;
     background-color: orange;
 
-    &:hover{
+    &:hover {
       background-color: darkorange;
     }
   }

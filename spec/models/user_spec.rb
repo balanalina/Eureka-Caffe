@@ -40,8 +40,5 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq false
       @user.email= 'examples@valid.com'
     end
-
-
   end
-
 end
