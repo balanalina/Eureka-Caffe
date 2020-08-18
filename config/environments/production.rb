@@ -65,17 +65,16 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
   host = 'https://shrouded-dusk-85229.herokuapp.com'
-  config.action_mailer.default_url_options = {host: host}
-  ActionMailer::Base.smtp_settings = {
-      :address => 'smtp.mailgun.org',
-      :port => '587',
-      :authentication => :plain,
-      :user_name => ENV['MAILGUN_SMTP_LOGIN'],
-      :password => ENV['MAILGUN_SMTP_PASSWORD'],
-      :domain => 'https://shrouded-dusk-85229.heroku.com',
-      :enable_starttls_auto => true
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'],
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => 'shrouded_dusk-85229.herokuapp.com',
+      :authentication => :plain
   }
   
 
