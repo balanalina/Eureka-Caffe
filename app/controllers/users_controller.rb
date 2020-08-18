@@ -11,12 +11,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      forwarding_url = session[:forwarding_url]
-      reset_session
-      log_in @user
-      flash[:success] = 'Account created!'
-      Cart.create(user_id: @user.id)
-      redirect_to forwarding_url || @user
+      @user.send_activation_mail
+      flash[:info] = "Please check you email to activate your account!"
+      redirect_to root_url
     else
       render 'new'
     end

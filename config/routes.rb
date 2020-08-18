@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
   resources :cart_items
   resources :products
-
+  resources :account_activations, only: [:edit]
 end
