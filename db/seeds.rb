@@ -25,4 +25,6 @@ products_array.each do |hash|
   new_product.image.attach(io: File.open(file_path), filename: image)
 end
 
+User.create(name: 'buna siua', email: 'alina@jmek.com', password: '1111111', activation: true)
+
 
