@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   has_secure_password
   has_one :cart
   before_create :create_activation_digest
@@ -8,6 +8,20 @@ class User < ApplicationRecord
   validates :password_digest, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :email, presence: true, uniqueness: true,
                     length: { minimum: 10 }, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest, User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 2.hour.ago
+  end
 
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

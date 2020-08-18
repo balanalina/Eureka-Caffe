@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'caffes#home'
   get '/home',to: 'caffes#home'
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :products
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
