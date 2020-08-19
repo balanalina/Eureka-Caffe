@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :category, presence: true
   validates :price, presence: true
-  validates :image, presence: true
+  validates :image, presence: true, allow_blank: false
   private
 
   def not_referenced_by_any_cart_item

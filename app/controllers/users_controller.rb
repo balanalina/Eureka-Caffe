@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   end
 
   def current_user?(user)
+    true if user.admin?
     user && user == current_user
   end
 

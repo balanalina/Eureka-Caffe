@@ -44,7 +44,7 @@
           %br/
           %li Item5
           %br/
-      - if @current_user.admin?
+      - if logged_in? && @current_user.admin?
         %li{onclick: "dropDown(this)"}
           ADMIN ACTIONS
           %ul.child

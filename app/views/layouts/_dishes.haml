@@ -9,10 +9,10 @@
             %p.title= dish.title
             %p.category= dish.category
             %p.price= number_to_currency(dish.price)
-            - if logged_in? && !@current_user.admin?
+            - if logged_in?
               =button_to 'Add to cart',cart_items_path(product_id: dish.id) ,class: 'button carts-button is-warning add-to-carts'
-            - elsif !logged_in?
+            - else
               =button_to 'Add to cart', new_user_url , method: :get ,class: 'button carts-button is-warning add-to-carts'
-            - else @current_user.admin?
+            - if @current_user.admin?
               = button_to 'Delete product', admin_product_url(id: dish.id), method: :delete, class: 'button carts-button is-warning add-to-cart'
               = button_to 'Edit product', edit_admin_product_url(id: dish.id), method: :get, class: 'button carts-button is-warning add-to-cart'

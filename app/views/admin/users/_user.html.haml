@@ -1,0 +1,4 @@
+%li.row
+  = gravatar_for user, size: 50
+  = link_to user.name, user_path(user), class: 'user-text'
+  = link_to "delete", admin_users_path(user: user), method: :delete, data: { confirm: "You sure?" }, class: 'user-text'
