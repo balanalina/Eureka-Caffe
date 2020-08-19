@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     get :show, on: :member
   end
   resources :cart_items
-  resources :products
   resources :account_activations, only: [:edit]
-  resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :password_resets, only: %i[new create edit update]
+  namespace :admin do
+    resources :products
+  end
 end
