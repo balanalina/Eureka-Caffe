@@ -1,5 +1,18 @@
 class Admin::ProductsController < AdminController
-  before_action :set_product, only: [:destroy]
+  before_action :set_product, only: %i[edit update destroy]
+  before_action
+  def edit; end
+
+  def update
+    if @product.update(product_params)
+      flash[:success] = 'Product edited!'
+      redirect_to root_url
+    else
+      flash[:danger] = 'Could not update product!'
+      render 'edit'
+    end
+  end
+
   def destroy
     if @product.destroy
       redirect_to root_url
@@ -13,7 +26,11 @@ class Admin::ProductsController < AdminController
   private
 
   def product_params
-    params.require(:id)
+    params.require(:product).permit(:title, :category, :price, :image)
+  end
+
+  def update_params
+
   end
 
   def set_product
