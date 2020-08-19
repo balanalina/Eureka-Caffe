@@ -27,5 +27,8 @@ Rails.application.routes.draw do
     resources :products do
       put :edit, on: :member
     end
+    resource :users do
+      get :index, on: :collection
+    end
   end
 end

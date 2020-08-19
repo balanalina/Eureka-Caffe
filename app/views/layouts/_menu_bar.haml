@@ -44,10 +44,13 @@
           %br/
           %li Item5
           %br/
-      %li{onclick: "dropDown(this)"}
-        ADMIN ACTIONS
-        %ul.child
-          %li=link_to "ADD PRODUCT", new_admin_product_url
+      - if @current_user.admin?
+        %li{onclick: "dropDown(this)"}
+          ADMIN ACTIONS
+          %ul.child
+            %li=link_to "ADD PRODUCT", new_admin_product_url
+            %br/
+            %li=link_to "SEE USERS", admin_users_path
       %i.arrow.down
 
     %div.slider
