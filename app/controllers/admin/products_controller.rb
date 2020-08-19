@@ -1,6 +1,25 @@
 class Admin::ProductsController < AdminController
   before_action :set_product, only: %i[edit update destroy]
-  before_action
+
+  def index
+    redirect_to new_admin_product_url
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new product_params
+    if @product.save
+      redirect_to root_url
+      flash[:success] = 'Product created!'
+    else
+      flash[:danger] = 'Could not create product!'
+      render 'new'
+    end
+  end
+
   def edit; end
 
   def update
