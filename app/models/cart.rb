@@ -15,4 +15,8 @@ class Cart < ApplicationRecord
   def total_price
     cart_items.to_a.sum { |item| item.total_price }
   end
+
+  def empty_cart
+    self.cart_items.delete_all
+  end
 end

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   has_secure_password
   has_one :cart, dependent: :destroy
+  has_many :orders, dependent: :destroy
   before_create :create_activation_digest
   before_save :email_downcase
   validates :name, presence: true, length: { minimum: 6 }

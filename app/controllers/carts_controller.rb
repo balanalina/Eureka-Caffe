@@ -5,9 +5,9 @@ class CartsController < ApplicationController
   def show; end
 
   def destroy
-    @cart.cart_items.delete_all
+    @cart.empty_cart
     redirect_to(@cart)
-    flash[:success] = "Your cart is empty!"
+    flash[:success] = 'Your cart is empty!'
   end
 
   private
