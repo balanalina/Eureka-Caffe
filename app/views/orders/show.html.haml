@@ -1,0 +1,17 @@
+-provide(:title,"Order details")
+%h1.edit-title Order Deatils
+- if @order.confirmation
+  %h3.edit-title Confirmed
+-else
+  %h3.edit-title Not confirmed
+%h3.edit-title= @order.address
+%h3.edit-title= @order.phone_number
+%h3.edit-title= @order.created_at.to_date
+%h3.edit-title= @order.created_at.to_time.strftime("%I:%M%p")
+=render(@order.order_items)
+.column.total.has_text_right
+  %h4.title.is_4
+    %span.f5 Total:
+    =number_to_currency(@order.total_price)
+
+

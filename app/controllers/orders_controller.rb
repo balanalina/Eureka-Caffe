@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :order_params, only: :create
+  before_action :order_params, only: %i[create]
   before_action :set_current_cart, only: :create
   def new
     @order = Order.new
@@ -21,6 +21,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   private
 
   def order_params
@@ -30,4 +34,5 @@ class OrdersController < ApplicationController
   def set_current_cart
     @cart = current_user.cart
   end
+
 end
