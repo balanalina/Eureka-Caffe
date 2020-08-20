@@ -23,12 +23,9 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :account_activations, only: [:edit]
   resources :password_resets, only: %i[new create edit update]
-  resources :orders
-  #do
-    #11get :new
-    #post :create, on: :member
-    #get :show, on: :member
-    #end
+  resources :orders do
+    get :index
+  end
   namespace :admin do
     resources :products do
       put :edit, on: :member

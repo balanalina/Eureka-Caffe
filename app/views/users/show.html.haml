@@ -9,4 +9,7 @@
       %p.user-email
         =@user.email
     = button_to 'Settings', edit_user_path(@user), method: :put, class: 'btn btn-primary bttn-settings'
+    %br/
+    %br/
+    = button_to 'My orders', orders_url, method: :get, class: 'btn btn-primary bttn-orders'
 

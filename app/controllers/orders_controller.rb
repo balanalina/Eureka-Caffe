@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   before_action :order_params, only: %i[create]
   before_action :set_current_cart, only: :create
+
+  def index
+    @orders = current_user.orders.paginate(page: params[:page])
+  end
+
   def new
     @order = Order.new
   end
