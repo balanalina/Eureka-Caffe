@@ -21,8 +21,9 @@ products_array.each do |hash|
   price = hash[:price]
   image = hash[:image]
   file_path = Rails.root.join(path.first, path.second, path.third, image)
-  new_product = Product.create_or_find_by!(title: title, category: category, price: price)
+  new_product = Product.new(title: title, category: category, price: price)
   new_product.image.attach(io: File.open(file_path), filename: image)
+  new_product.save
 end
 
 User.create(name: 'buna siua', email: 'alina@jmek.com', password: '1111111', activated: true, admin: true)
