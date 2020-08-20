@@ -6,12 +6,19 @@ class Admin::UsersController < AdminController
   end
 
   def destroy
-    user = User.find(params[:user][:id])
+    user = User.find(params[:id])
+    if user.destroy
+      redirect_to admin_users_url
+      flash[:success] = 'User deleted!'
+    else
+      redirect_to admin_users_url
+      flash[:danger] = "Could not delete user!"
+    end
   end
 
   private
 
   def user_params
-    params.require(:user)
+    params.require(:id)
   end
 end
