@@ -21,18 +21,16 @@ class PasswordResetsController < ApplicationController
   def edit; end
 
   def update
-    if params[:user][:password].empty?
-      @user.errors.add(:password, "can't be empty")
-      render 'edit'
-    elsif params[:user][:password].length < 7
-      @user.errors.add(:password, 'Password too short')
-      render 'edit'
-    elsif @user.update(user_params)
+
+    if @user.update(user_params)
       reset_session
       log_in @user
       @user.update_attribute(:reset_digest, nil)
       flash[:success] = 'Password has been reset!'
       redirect_to @user
+    else
+      render 'edit'
+      flash[:danger] = 'Invalid password!'
     end
   end
 
@@ -47,7 +45,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def valid_user
-    unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
+    unless @user && @user.activated? && @user.authenticated?(:reset, params[:id])
       redirect_to root_url
     end
   end

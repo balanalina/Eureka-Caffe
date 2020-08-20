@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   before_create :create_activation_digest
   before_save :email_downcase
+  validate :validate_password
   validates :name, presence: true, length: { minimum: 6 }
   validates :password_digest, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :email, presence: true, uniqueness: true,
@@ -67,6 +68,13 @@ class User < ApplicationRecord
 
   def email_downcase
     self.email = email.downcase
+  end
+
+  private
+
+  def validate_password
+    errors.add(:password,"too short") if password.length < 7
+    errors.add(:password,"can't be empty") if password.empty?
   end
 
 end
