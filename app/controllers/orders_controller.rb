@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :order_params, only: %i[create]
   before_action :set_current_cart, only: :create
+  before_action :check_user, only: :show
 
   def index
     @orders = current_user.orders.paginate(page: params[:page])
@@ -39,4 +40,11 @@ class OrdersController < ApplicationController
     def set_current_cart
       @cart = current_user.cart
     end
+
+  def check_user
+    unless current_user.admin? || current_user.id == Order.find(params[:id]).user.id
+      redirect_to root_url
+      flash[:success] = "You can't access this order!"
+    end
+  end
 end

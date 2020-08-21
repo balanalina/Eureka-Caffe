@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
-  before_action :set_cart, only: %i[show edit destroy]
+  before_action :set_cart, :check_user, only: %i[show edit destroy]
 
   def show; end
 
@@ -20,4 +20,11 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid carts #{params[:user_id]}"
       redirect_to root_path, notice: "That carts doesn't exist"
     end
+
+  def check_user
+    unless current_user.admin? || @cart == Cart.find(params[:id])
+      redirect_to root_url
+      flash[:success] = "You can't access this cart!"
+    end
+  end
 end
