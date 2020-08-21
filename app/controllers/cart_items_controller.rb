@@ -31,11 +31,11 @@ class CartItemsController < ApplicationController
 
   private
 
-  def set_cart_item
-    @cart_item = current_user.cart.cart_items.find(params[:id])
-  end
+    def set_cart_item
+      @cart_item = current_user.cart.cart_items.find(params[:id])
+    end
 
-  def cart_item_params
-    params.require(:product_id)
-  end
+    def cart_item_params
+      params.require(:product_id)
+    end
 end

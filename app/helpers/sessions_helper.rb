@@ -33,14 +33,13 @@ module SessionsHelper
 
   private
 
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
+    def forget(user)
+      user.forget
+      cookies.delete(:user_id)
+      cookies.delete(:remember_token)
+    end
 
-  def store_location
-    session[:forwarding_url] = request.original_url if request.get?
-  end
-
+    def store_location
+      session[:forwarding_url] = request.original_url if request.get?
+    end
 end

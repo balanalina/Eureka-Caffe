@@ -1,4 +1,4 @@
 %li.row
-  =link_to order.user.name, order_url(order), method: :get, class: 'user-text'
+  = link_to order.user.name, order_url(order), method: :get, class: 'user-text'
   - unless order.confirmation
-    =link_to "Confirm order", admin_order_path(order), method: :patch, class: 'user-text'
+    = link_to "Confirm order", admin_order_path(order), method: :patch, class: 'user-text'

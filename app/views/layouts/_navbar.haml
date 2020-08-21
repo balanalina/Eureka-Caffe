@@ -5,24 +5,24 @@
     %P.logo-text CAFFE
   %div.right-side-info
     %b
-      %p=link_to "HOME", '/home'
+      %p= link_to "HOME", '/home'
       %span.dot
-      %p=link_to "ABOUT", '#'
+      %p= link_to "ABOUT", '#'
       %span.dot
-      %p=link_to "SERVICE", '#'
+      %p= link_to "SERVICE", '#'
       %span.dot
-      %p=link_to "BLOG", '#'
+      %p= link_to "BLOG", '#'
       %span.dot
-      %p=link_to "CONTACTS", '#'
+      %p= link_to "CONTACTS", '#'
       %span.dot
       - if logged_in?
-        %p=link_to "PROFILE", @current_user
+        %p= link_to "PROFILE", @current_user
         %span.dot
         %span.icon.is_small
-          =link_to("<i class='fa fa-shopping-cart'></i>".html_safe,@current_user.cart)
+          = link_to("<i class='fa fa-shopping-cart'></i>".html_safe,@current_user.cart)
         %span.dot
-        %p=link_to "LOG OUT", logout_session_path(@current_user), method: :delete
+        %p= link_to "LOG OUT", logout_session_path(@current_user), method: :delete
       - else
-        %p=link_to "SIGN UP", new_user_url
+        %p= link_to "SIGN UP", new_user_url
         %span.dot
-        %p=link_to "LOG IN", new_session_url
+        %p= link_to "LOG IN", new_session_url

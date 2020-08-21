@@ -6,6 +6,6 @@
     %strong= order_item.product.title
     .columns.align-items-center
       .column.is-3.has-text-right
-        %strong.f4=number_to_currency(order_item.total_price)
+        %strong.f4= number_to_currency(order_item.total_price)
     .column.is-2
-    %strong="Quantity: #{order_item.quantity}"
+    %strong= "Quantity: #{order_item.quantity}"

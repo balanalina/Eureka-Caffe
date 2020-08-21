@@ -14,7 +14,7 @@
     margin: 5px;
   }
 
-  .signup-bttn, .edit-bttn{
+  .signup-bttn, .edit-bttn {
     margin: 0;
     position: absolute;
     left: 42%;
@@ -47,7 +47,7 @@
   }
 }
 
-.bttn-settings{
+.bttn-settings {
   position: absolute;
   left: 42%;
   right: 49%;
@@ -59,12 +59,12 @@
     background-color: darkorange;
   }
 
-  &:active{
+  &:active {
     background-color: darkorange;
   }
 }
 
-.bttn-orders{
+.bttn-orders {
   margin-top: 30px;
   position: absolute;
   left: 42%;
@@ -77,7 +77,7 @@
     background-color: darkorange;
   }
 
-  &:active{
+  &:active {
     background-color: darkorange;
   }
 }

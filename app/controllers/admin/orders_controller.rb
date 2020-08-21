@@ -9,6 +9,4 @@ class Admin::OrdersController < AdminController
     redirect_to root_url
     flash[:success] = 'Order confirmed!'
   end
-
-
 end

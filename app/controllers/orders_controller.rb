@@ -30,17 +30,13 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
-
   private
 
-  def order_params
-    params.require(:order).permit(:address, :phone_number)
-  end
+    def order_params
+      params.require(:order).permit(:address, :phone_number)
+    end
 
-  def set_current_cart
-    @cart = current_user.cart
-  end
-
-
-
+    def set_current_cart
+      @cart = current_user.cart
+    end
 end

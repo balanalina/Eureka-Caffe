@@ -1,7 +1,6 @@
 %div
   %nav.drop-down-menu
     %ul.parent
-
       %li{onclick: "dropDown(this)"}
         CATEGORY
         %i.arrow.down
@@ -48,13 +47,12 @@
         %li{onclick: "dropDown(this)"}
           ADMIN ACTIONS
           %ul.child
-            %li=link_to "ADD PRODUCT", new_admin_product_url
+            %li= link_to "ADD PRODUCT", new_admin_product_url
             %br/
-            %li=link_to "SEE USERS", admin_users_path
+            %li= link_to "SEE USERS", admin_users_path
             %br/
             %li= link_to "SEE ORDERS", admin_orders_path
         %i.arrow.down
-
     %div.slider
       %p PRICE
       %p#first.price

@@ -38,17 +38,17 @@ class Admin::ProductsController < AdminController
       flash[:success] = 'Product successfully removed!'
     else
       redirect_to root_url
-      flash[:danger] = "This product is referenced by cart_items!"
+      flash[:danger] = 'This product is referenced by cart_items!'
     end
   end
 
   private
 
-  def product_params
-    params.require(:product).permit(:title, :category, :price, :image)
-  end
+    def product_params
+      params.require(:product).permit(:title, :category, :price, :image)
+    end
 
-  def set_product
-    @product = Product.find(params[:id])
-  end
+    def set_product
+      @product = Product.find(params[:id])
+    end
 end

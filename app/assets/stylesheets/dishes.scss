@@ -19,7 +19,7 @@
     transition: all .2s ease-in-out;
     margin-bottom: 30px;
 
-    .carts-button{
+    .carts-button {
       display: none;
       color: orange;
     }
@@ -27,7 +27,7 @@
     &:hover {
       transform: scale(1.08);
 
-      .carts-button{
+      .carts-button {
         display: block;
         align-self: center;
         margin: auto;

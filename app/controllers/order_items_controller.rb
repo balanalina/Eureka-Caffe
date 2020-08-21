@@ -5,7 +5,7 @@ class OrderItemsController < ApplicationController
 
   private
 
-  def set_order_item
-    @order_item = CartItem.find(params[:id])
-  end
+    def set_order_item
+      @order_item = CartItem.find(params[:id])
+    end
 end

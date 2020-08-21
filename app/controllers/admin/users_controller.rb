@@ -12,13 +12,13 @@ class Admin::UsersController < AdminController
       flash[:success] = 'User deleted!'
     else
       redirect_to admin_users_url
-      flash[:danger] = "Could not delete user!"
+      flash[:danger] = 'Could not delete user!'
     end
   end
 
   private
 
-  def user_params
-    params.require(:id)
-  end
+    def user_params
+      params.require(:id)
+    end
 end

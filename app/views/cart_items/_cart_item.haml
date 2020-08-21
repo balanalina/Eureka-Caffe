@@ -6,7 +6,7 @@
     %strong= cart_item.product.title
     .columns.align-items-center
       .column.is-3.has-text-right
-        %strong.f4=number_to_currency(cart_item.total_price)
+        %strong.f4= number_to_currency(cart_item.total_price)
     .column.is-2
     %strong="Quantity: #{cart_item.quantity}"
   .has-text-right.remove-item-link

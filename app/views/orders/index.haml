@@ -2,5 +2,5 @@
 %h1.edit-title My Orders
 %ul.row
   -@orders.each do |order|
-    =render order
-  =will_paginate @orders
+    = render order
+  = will_paginate @orders

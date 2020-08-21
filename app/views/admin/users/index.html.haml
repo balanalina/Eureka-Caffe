@@ -2,6 +2,6 @@
 %h1.edit-title All Users
 %ul.row
   -@users.each do |user|
-    =render user
-  =will_paginate @users
+    = render user
+  = will_paginate @users
 

@@ -61,20 +61,17 @@ class User < ApplicationRecord
 
   private
 
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
 
-  def email_downcase
-    self.email = email.downcase
-  end
+    def email_downcase
+      self.email = email.downcase
+    end
 
-  private
-
-  def validate_password
-    errors.add(:password,"too short") if password.length < 7
-    errors.add(:password,"can't be empty") if password.empty?
-  end
-
+    def validate_password
+      errors.add(:password,"too short") if password.length < 7
+      errors.add(:password,"can't be empty") if password.empty?
+    end
 end

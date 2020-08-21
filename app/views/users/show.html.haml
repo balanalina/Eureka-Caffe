@@ -3,11 +3,11 @@
 %div.row
   %div.col-md-4
     %section.user-info
-      =gravatar_for @user
+      = gravatar_for @user
       %h1
-        =@user.name
+        = @user.name
       %p.user-email
-        =@user.email
+        = @user.email
     = button_to 'Settings', edit_user_path(@user), method: :put, class: 'btn btn-primary bttn-settings'
     %br/
     %br/
