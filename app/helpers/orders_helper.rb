@@ -1,5 +1,6 @@
 module OrdersHelper
   require 'rqrcode'
+
   def generate_qr(text)
     qrcode = RQRCode::QRCode.new(text)
     qrcode.as_svg(

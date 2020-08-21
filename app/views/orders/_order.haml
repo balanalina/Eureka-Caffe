@@ -3,4 +3,4 @@
     = link_to "#{order.created_at.to_date} #{order.created_at.to_time.strftime("%I:%M%p")} Confirmed",order_url(order), method: :get, class: 'user-text'
   -else
     = link_to "#{order.created_at.to_date} #{order.created_at.to_time.strftime("%I:%M%p")} Not Confirmed",order_url(order), method: :get, class: 'user-text'
-  = generate_qr(order_url(order))
+  = generate_qr(order_url(order.qr_token))
