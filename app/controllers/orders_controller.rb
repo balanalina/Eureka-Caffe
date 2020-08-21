@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+
   private
 
   def order_params
@@ -39,5 +40,7 @@ class OrdersController < ApplicationController
   def set_current_cart
     @cart = current_user.cart
   end
+
+
 
 end
